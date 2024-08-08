@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PicShare - Gallery</title>
+    <link rel="stylesheet" href="/public/CSS/index-style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Enjoy Your Memories with PicShare Gallery</h1>
+        <a href="/upload">Upload a photo</a>
+
+        <div class="gallery">
+            <% photos.forEach(photo => { %>
+                <div class="photo">
+                    <h2><%= photo.title %></h2>
+                    <p><%= photo.description %></p>
+                    <img src="/public/images/<%=photo.filename %>" alt="<%= photo.title %>" height="200" width="200">
+
+                    <!-- <form action="/delete/<%= photo._id %>" method="POST">
+
+                        <button type="submit">Delete</button> 
+
+                    </form>-->
+
+                </div>
+            <% }) %>
+        </div>
+    </div>
+</body>
+</html>
